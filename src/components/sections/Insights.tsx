@@ -9,6 +9,8 @@ import {
 import { Container } from "@/components/layout/Container"
 import { SectionHeading } from "@/components/sections/SectionHeading"
 import { insights } from "@/data/insights"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 export function Insights() {
   return (
@@ -33,14 +35,24 @@ export function Insights() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <Button
+{/*           <Button
             variant="outline"
             size="lg"
             render={<a href="#insights" />}
           >
             View All Insights
             <ArrowUpRight className="ml-2 h-4 w-4" />
-          </Button>
+          </Button> */}
+          <a
+            href="#insights"
+            className={cn(
+              buttonVariants({ variant: "ghost" }),
+              "gap-2"
+            )}
+          >
+            View All Insights
+            <ArrowUpRight className="ml-2 h-4 w-4" />
+          </a>
         </div>
       </Container>
     </section>
@@ -85,7 +97,7 @@ function InsightCard({
         </p>
 
         <div className="mt-auto pt-7">
-          <Button
+{/*           <Button
             variant="ghost"
             className="group/link -ml-3 px-3"
             render={<a href={href} />}
@@ -93,7 +105,14 @@ function InsightCard({
             Read Article
 
             <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-          </Button>
+          </Button> */}
+          <a
+            href={href}
+            className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+          >
+            Read Article
+            <ArrowUpRight className="ml-2 h-4 w-4" />
+          </a>
         </div>
 
       </CardContent>

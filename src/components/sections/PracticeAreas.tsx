@@ -31,14 +31,21 @@ export function PracticeAreas() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <Button
+{/*           <Button
             variant="outline"
             size="lg"
             render={<a href="#contact" />}
           >
             Discuss Your Legal Matter
             <ArrowUpRight className="ml-2 h-4 w-4" />
-          </Button>
+          </Button> */}
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+          >
+            Discuss Your Legal Matter
+            <ArrowUpRight className="ml-2 h-4 w-4" />
+          </a>
         </div>
 
       </Container>
@@ -85,7 +92,7 @@ function PracticeAreaCard({
         {/* Link */}
         <div className="mt-auto pt-7">
 
-          <Button
+{/*           <Button
             variant="ghost"
             className="group/link -ml-3 px-3"
             render={<a href={href} />}
@@ -95,8 +102,16 @@ function PracticeAreaCard({
             <ArrowUpRight
               className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
             />
-          </Button>
-
+          </Button> */}
+          <a
+            href={href}
+            className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+          >
+            Learn more
+            <ArrowUpRight
+              className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+            />
+          </a>
         </div>
 
       </CardContent>

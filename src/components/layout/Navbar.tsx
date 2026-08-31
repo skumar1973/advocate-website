@@ -6,8 +6,11 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { useTheme } from "@/components/theme/ThemeProvider"
 
 export function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -82,13 +85,31 @@ export function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden items-center gap-2 md:flex">
 
-          <Button
+{/*           <Button
             variant="ghost"
             size="icon"
             aria-label="Toggle theme"
           >
             <Sun className="h-5 w-5 dark:hidden" />
             <Moon className="hidden h-5 w-5 dark:block" />
+          </Button> */}
+          
+          <Button
+            variant="ghost"
+            size="icon"
+            type="button"
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark"
+                ? "Switch to light theme"
+                : "Switch to dark theme"
+            }
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
           </Button>
 
           <Button>
@@ -100,13 +121,31 @@ export function Navbar() {
         {/* Mobile Navigation */}
         <div className="flex items-center gap-1 md:hidden">
 
-          <Button
+{/*           <Button
             variant="ghost"
             size="icon"
             aria-label="Toggle theme"
           >
             <Sun className="h-5 w-5 dark:hidden" />
             <Moon className="hidden h-5 w-5 dark:block" />
+          </Button> */}
+          
+          <Button
+            variant="ghost"
+            size="icon"
+            type="button"
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark"
+                ? "Switch to light theme"
+                : "Switch to dark theme"
+            }
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
           </Button>
 
           <Sheet>

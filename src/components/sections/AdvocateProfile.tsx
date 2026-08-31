@@ -138,7 +138,7 @@ export function AdvocateProfile() {
             {/* CTA */}
             <div className="mt-10">
 
-              <Button
+{/*               <Button
                 size="lg"
                 variant="outline"
                 render={<a href="#contact" />}
@@ -146,7 +146,14 @@ export function AdvocateProfile() {
                 View Full Profile
 
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
+              <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+              >
+                View Full Profile
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
 
             </div>
 
