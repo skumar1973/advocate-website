@@ -6,21 +6,22 @@ import {
 } from "lucide-react"
 
 import { Container } from "@/components/layout/Container"
+import { Link } from "react-router"
 
 const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Practice Areas", href: "#practice" },
-  { label: "Insights", href: "#insights" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Practice Areas", href: "/#practice" },
+  { label: "Insights", href: "/#insights" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ]
 
 const practiceAreas = [
-  { label: "Civil", href: "#practice" },
-  { label: "Criminal", href: "#practice" },
-  { label: "Property", href: "#practice" },
-  { label: "Family", href: "#practice" },
-  { label: "Corporate", href: "#practice" },
+  { label: "Civil", href: "/#practice" },
+  { label: "Criminal", href: "/#practice" },
+  { label: "Property", href: "/#practice" },
+  { label: "Family", href: "/#practice" },
+  { label: "Corporate", href: "/#practice" },
 ]
 
 export function Footer() {
@@ -35,7 +36,7 @@ export function Footer() {
           <div className="lg:col-span-1">
 
             <a
-              href="#"
+              href="/#"
               className="inline-flex items-center gap-2"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-lg border bg-background">
@@ -128,19 +129,19 @@ export function Footer() {
           </p>
 
           <div className="flex gap-4">
-            <a
-              href="/privacy"
+            <Link
+              to="/privacy-policy"
               className="transition-colors hover:text-foreground"
             >
               Privacy Policy
-            </a>
+            </Link>
 
-            <a
-              href="/disclaimer"
+            <Link
+              to="/disclaimer"
               className="transition-colors hover:text-foreground"
             >
               Disclaimer
-            </a>
+            </Link>
           </div>
 
         </div>

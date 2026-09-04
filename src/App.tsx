@@ -1,74 +1,42 @@
-import { Navbar } from "@/components/layout/Navbar"
-import { Hero } from "@/components/sections/Hero"
-import { AdvocateProfile } from "@/components/sections/AdvocateProfile"
-import { PracticeAreas } from "@/components/sections/PracticeAreas"
-import { TrustProcess } from "@/components/sections/TrustProcess"
-import { Insights } from "@/components/sections/Insights"
-import { FAQ } from "@/components/sections/FAQ"
-import { Contact } from "@/components/sections/Contact"
-import { Footer } from "@/components/layout/Footer"
+import {
+  Route,
+  Routes,
+} from "react-router"
+
+import { ScrollToTop } from "@/components/routing/ScrollToTop"
+
+import Home from "@/pages/Home"
+import PrivacyPolicy from "@/pages/PrivacyPolicy"
+import Disclaimer from "@/pages/Disclaimer"
+import NotFound from "@/pages/NotFound"
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <main>
-        <Hero />
-        <AdvocateProfile />
-        <PracticeAreas />
-        <TrustProcess />
-        <Insights />
-        <FAQ />
-        <Contact />
-        {/* Temporary sections */}
+    <>
+      <ScrollToTop />
 
-{/*         <section
-          id="approach"
-          className="min-h-[50vh] border-b py-24"
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-semibold">
-              Approach
-            </h2>
-          </div>
-        </section> */}
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
 
-{/*         <section
-          id="insights"
-          className="min-h-[50vh] border-b py-24"
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-semibold">
-              Insights
-            </h2>
-          </div>
-        </section> */}
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
+        />
 
-{/*         <section
-          id="faq"
-          className="min-h-[50vh] border-b py-24"
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-semibold">
-              FAQ
-            </h2>
-          </div>
-        </section> */}
+        <Route
+          path="/disclaimer"
+          element={<Disclaimer />}
+        />
 
-{/*         <section
-          id="contact"
-          className="min-h-[50vh] py-24"
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-semibold">
-              Contact
-            </h2>
-          </div>
-        </section> */}
-
-      </main>
-      <Footer />
-    </div>
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
+      </Routes>
+    </>
   )
 }
 

@@ -40,42 +40,42 @@ export function Navbar() {
           aria-label="Main navigation"
         >
           <a
-            href="#about"
+            href="/#about"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             About
           </a>
 
           <a
-            href="#practice"
+            href="/#practice"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Practice Areas
           </a>
 
           <a
-            href="#approach"
+            href="/#approach"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Approach
           </a>
 
           <a
-            href="#insights"
+            href="/#insights"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Insights
           </a>
 
           <a
-            href="#faq"
+            href="/#faq"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             FAQ
           </a>
 
           <a
-            href="#contact"
+            href="/#contact"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Contact
@@ -176,42 +176,42 @@ export function Navbar() {
               <div className="mt-8 flex flex-col gap-1">
 
                 <a
-                  href="#about"
+                  href="/#about"
                   className="rounded-md px-4 py-3 text-sm hover:bg-muted"
                 >
                   About
                 </a>
 
                 <a
-                  href="#practice"
+                  href="/#practice"
                   className="rounded-md px-4 py-3 text-sm hover:bg-muted"
                 >
                   Practice Areas
                 </a>
 
                 <a
-                  href="#approach"
+                  href="/#approach"
                   className="rounded-md px-4 py-3 text-sm hover:bg-muted"
                 >
                   Approach
                 </a>
 
                 <a
-                  href="#insights"
+                  href="/#insights"
                   className="rounded-md px-4 py-3 text-sm hover:bg-muted"
                 >
                   Insights
                 </a>
 
                 <a
-                  href="#faq"
+                  href="/#faq"
                   className="rounded-md px-4 py-3 text-sm hover:bg-muted"
                 >
                   FAQ
                 </a>
 
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="rounded-md px-4 py-3 text-sm hover:bg-muted"
                 >
                   Contact
