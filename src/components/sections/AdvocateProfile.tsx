@@ -46,7 +46,7 @@ export function AdvocateProfile() {
                 />
 
                 <AvatarFallback className="h-full w-full rounded-none bg-muted text-4xl font-semibold">
-                  AK
+                  RR
                 </AvatarFallback>
               </Avatar>
 
@@ -61,11 +61,11 @@ export function AdvocateProfile() {
 
                   <div>
                     <p className="text-sm font-semibold">
-                      Advocate
+                      RANJEET RANJAN
                     </p>
 
                     <p className="text-xs text-muted-foreground">
-                      Legal Counsel & Representation
+                      Advocate
                     </p>
                   </div>
 
@@ -83,7 +83,7 @@ export function AdvocateProfile() {
             <div className="max-w-2xl">
 
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Adv. [Full Name]
+                Adv. Ranjeet Ranjan
               </p>
 
               <h3 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -91,7 +91,7 @@ export function AdvocateProfile() {
               </h3>
 
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Adv. [Full Name] provides legal advice and representation
+                Adv. Ranjeet Ranjan provides legal advice and representation
                 to individuals, families and businesses across a range of
                 legal matters. Each matter is approached with attention
                 to the client's circumstances, applicable law and available
@@ -130,7 +130,7 @@ export function AdvocateProfile() {
               <ProfileDetail
                 icon={MapPin}
                 title="Practice Location"
-                value="[City], [State]"
+                value="New Delhi, India"
               />
 
             </div>

@@ -200,13 +200,14 @@ export function ConsultationForm() {
 
       </div>
       <div className="mt-4 text-sm text-muted-foreground">
-        Alternatively, you can reach us directly on WhatsApp.
+        Alternatively, you can reach us directly on WhatsApp
         <a
-        href="https://wa.me/91XXXXXXXXXX"
+        href="https://wa.me/917532931242"
         target="_blank"
         rel="noreferrer"
         className="ml-1 font-medium text-primary underline transition-colors hover:text-primary/80">
-        WhatsApp Office
+        Click here
+
       </a>
       </div>
 

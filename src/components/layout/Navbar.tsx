@@ -25,11 +25,11 @@ export function Navbar() {
 
           <div className="flex flex-col leading-none">
             <span className="text-sm font-semibold tracking-[0.15em]">
-              ADVOCATE
+              RANJEET RANJAN 
             </span>
 
             <span className="mt-1 text-[10px] tracking-[0.2em] text-muted-foreground">
-              LEGAL COUNSEL
+              ADVOCATE
             </span>
           </div>
         </a>

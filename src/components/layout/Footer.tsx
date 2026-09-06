@@ -45,11 +45,11 @@ export function Footer() {
 
               <div>
                 <p className="text-sm font-semibold">
-                  Advocate Name
+                  Ranjeet Ranjan
                 </p>
 
                 <p className="text-xs text-muted-foreground">
-                  Professional Legal Services
+                  Advocate 
                 </p>
               </div>
             </a>
@@ -84,14 +84,14 @@ export function Footer() {
 
               <ContactLink
                 icon={Phone}
-                label="+91 XXXXX XXXXX"
-                href="tel:+91XXXXXXXXXX"
+                label="+91 75329 31242"
+                href="tel:+917532931242"
               />
 
               <ContactLink
                 icon={Mail}
-                label="office@example.com"
-                href="mailto:office@example.com"
+                label="ranjeetranjan02@gmail.com"
+                href="mailto:ranjeetranjan02@gmail.com"
               />
 
               <ContactLink
@@ -145,7 +145,6 @@ export function Footer() {
           </div>
 
         </div>
-
       </Container>
     </footer>
   )

@@ -44,15 +44,15 @@ export function Contact() {
                 <ContactItem
                   icon={Phone}
                   label="Phone"
-                  value="+91 XXXXX XXXXX"
-                  href="tel:+91XXXXXXXXXX"
+                  value="+91 75329 31242"
+                  href="tel:+917532931242"
                 />
 
                 <ContactItem
                   icon={Mail}
                   label="Email"
-                  value="office@example.com"
-                  href="mailto:office@example.com"
+                  value="ranjeetranjan02@gmail.com"
+                  href="mailto:ranjeetranjan02@gmail.com"
                 />
 
                 <ContactItem
