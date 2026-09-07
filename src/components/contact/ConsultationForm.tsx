@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import emailjs from '@emailjs/browser';
 
 const matterTypes = [
   "Civil Litigation",
@@ -18,47 +19,67 @@ const matterTypes = [
 
 export function ConsultationForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  async function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
 
     // Part 7 currently handles the frontend only.
     // We will connect this form to a secure form endpoint later.
+    setStatus('Sending...');
 
-    setSubmitted(true)
-  }
+    try {
+      await emailjs.send(
+        'service_o4dqipg',
+        'template_obc3c6f',
+        {
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message
+        },
+        'Y15nFlrr6TFzQ90te'
+      );
+      setStatus('Email sent successfully!');
+      setForm({ name: '', phone: '', email: '', message: '' });
+    } catch (error) {
+      setStatus('Failed to send email. Try again.');
+    }
+    setSubmitted(true);
 
-  if (submitted) {
-    return (
-      <div className="flex min-h-[420px] flex-col items-center justify-center rounded-2xl border bg-card p-8 text-center">
+    if (submitted) {
+      return (
+        <div className="flex min-h-[420px] flex-col items-center justify-center rounded-2xl border bg-card p-8 text-center">
 
-        <div className="flex h-14 w-14 items-center justify-center rounded-full border bg-muted">
-          <CheckCircle2 className="h-6 w-6" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-full border bg-muted">
+            <CheckCircle2 className="h-6 w-6" />
+          </div>
+
+          <h3 className="mt-6 text-2xl font-semibold">
+            Enquiry received
+          </h3>
+
+          <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">
+            Thank you for contacting our office. We will review
+            your enquiry and respond through the contact details
+            provided.
+          </p>
+
+          <Button
+            variant="outline"
+            className="mt-6"
+            onClick={() => setSubmitted(false)}
+          >
+            Submit another enquiry
+          </Button>
+
         </div>
-
-        <h3 className="mt-6 text-2xl font-semibold">
-          Enquiry received
-        </h3>
-
-        <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">
-          Thank you for contacting our office. We will review
-          your enquiry and respond through the contact details
-          provided.
-        </p>
-
-        <Button
-          variant="outline"
-          className="mt-6"
-          onClick={() => setSubmitted(false)}
-        >
-          Submit another enquiry
-        </Button>
-
-      </div>
-    )
-  }
-
+      )
+    }
+  };
   return (
+    <>
     <form
       onSubmit={handleSubmit}
       className="rounded-2xl border bg-card p-6 sm:p-8"
@@ -88,6 +109,8 @@ export function ConsultationForm() {
             name="name"
             type="text"
             placeholder="Your full name"
+            value={form.name} 
+            onChange={(e) => setForm({ ...form, name: e.target.value })} 
             required
             autoComplete="name"
           />
@@ -102,10 +125,12 @@ export function ConsultationForm() {
           <Input
             id="phone"
             name="phone"
-            type="tel"
+            type="text"
             placeholder="+91 XXXXX XXXXX"
+            value={form.phone} 
+            onChange={(e) => setForm({ ...form, phone: e.target.value })} 
             required
-            autoComplete="tel"
+            autoComplete="phone"
           />
         </div>
 
@@ -120,6 +145,8 @@ export function ConsultationForm() {
             name="email"
             type="email"
             placeholder="you@example.com"
+            value={form.email} 
+            onChange={(e) => setForm({ ...form, email: e.target.value })} 
             autoComplete="email"
           />
         </div>
@@ -159,6 +186,8 @@ export function ConsultationForm() {
             id="message"
             name="message"
             placeholder="Briefly describe the nature of your enquiry."
+            value={form.message} 
+            onChange={(e) => setForm({ ...form, message: e.target.value })} 
             rows={5}
           />
 
@@ -199,7 +228,10 @@ export function ConsultationForm() {
         </Button>
 
       </div>
-      <div className="mt-4 text-sm text-muted-foreground">
+
+      <p>{status}</p>
+    </form>
+          <div className="mt-4 text-sm text-muted-foreground">
         Alternatively, you can reach us directly on WhatsApp
         <a
         href="https://wa.me/917532931242"
@@ -210,7 +242,6 @@ export function ConsultationForm() {
 
       </a>
       </div>
-
-    </form>
+    </>
   )
 }
